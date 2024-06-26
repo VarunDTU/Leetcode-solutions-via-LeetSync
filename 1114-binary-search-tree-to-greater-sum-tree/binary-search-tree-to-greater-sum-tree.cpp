@@ -23,7 +23,7 @@ int sum=0;
 
     }
     TreeNode* bstToGst(TreeNode* root) {
-        helper(root);
-        return root;
+        
+        return helper(root);
     }
 };
