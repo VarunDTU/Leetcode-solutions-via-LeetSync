@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void dfs(int i, int j, vector<vector<int>>& ed, vector<vector<int>>& ans,
+    void dfs(int i, int &j, vector<vector<int>>& ed, vector<vector<int>>& ans,
              vector<bool>& vis) {
         vis[i] = true;
         for (int itr : ed[i]) {
