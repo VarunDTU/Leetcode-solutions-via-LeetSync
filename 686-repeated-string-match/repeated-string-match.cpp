@@ -4,8 +4,7 @@ public:
         string match = "";
         while (match.size() < b.size())
             match += a;
-        cout << match;
-
+     
         if (match.find(b) != string::npos)
             return match.size() / a.size();
 
