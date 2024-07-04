@@ -7,7 +7,7 @@ public:
     int shipWithinDays(vector<int>& weights, int days) {
         int minW = INT_MIN, maxW = 0;
         int ans = 0;
-        for (auto itr : weights) {
+        for (int itr : weights) {
             minW = max(itr, minW);
             maxW += itr;
         }
