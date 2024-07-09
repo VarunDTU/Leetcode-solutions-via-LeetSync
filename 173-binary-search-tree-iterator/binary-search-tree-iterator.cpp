@@ -30,9 +30,8 @@ public:
     }
 
     bool hasNext() {
-        if (st.size() > 0)
-            return true;
-        return false;
+        if (st.empty())return false;
+        return true;
     }
 };
 
