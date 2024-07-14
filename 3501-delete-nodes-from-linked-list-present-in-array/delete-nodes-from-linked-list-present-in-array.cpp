@@ -10,16 +10,13 @@
  */
 class Solution {
 public:
-    void deleteNode(ListNode* head){
-        head->next=head->next->next;
-    }
+    
     ListNode* modifiedList(vector<int>& nums, ListNode* head) {
         unordered_set<int>dic;
         for(auto itr:nums)dic.insert(itr);
         ListNode * temp=head;
         while(head&&head->next){
-            //cout<<head->val;
-            if(dic.find(head->next->val)!=dic.end())deleteNode(head);
+            if(dic.find(head->next->val)!=dic.end())head->next=head->next->next;
             else head=head->next;
         }
         if(dic.find(temp->val)!=dic.end()&&temp) temp=temp->next;
