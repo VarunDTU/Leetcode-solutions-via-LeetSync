@@ -19,7 +19,7 @@ public:
             if(dic.find(head->next->val)!=dic.end())head->next=head->next->next;
             else head=head->next;
         }
-        if(dic.find(temp->val)!=dic.end()&&temp) temp=temp->next;
+        if(dic.find(temp->val)!=dic.end()&&temp) return temp=temp->next;
         return temp;
 
     }
