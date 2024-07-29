@@ -8,6 +8,9 @@ public:
         return dp[i][mustpick]=max(helper(nums,i+1,false,dp),nums[i]+helper(nums,i+1,true,dp));
     }
     int maxSubArray(vector<int>& nums) {
+         ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
         vector<vector<int>>dp(nums.size()+1,vector<int>(2,-1e9));
         return helper(nums,0,false,dp);
     }
