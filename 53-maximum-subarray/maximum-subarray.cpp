@@ -2,6 +2,9 @@ class Solution {
 public:
     
     int helper(vector<int>&nums,int i,bool mustpick,vector<vector<int>>&dp){
+         ios::sync_with_stdio(0);
+        cin.tie(0);
+        cout.tie(0);
         if(i==nums.size())return mustpick?0:-1e9;
         if(dp[i][mustpick]!=-1e9)return dp[i][mustpick];
         if(mustpick)return dp[i][mustpick]= max(0,nums[i]+helper(nums,i+1,true,dp));
