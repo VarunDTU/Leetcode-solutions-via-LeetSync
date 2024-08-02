@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minSwaps(vector<int>& nums) {
-        int k=accumulate(nums.begin(),nums.end(),0);
+        int k=count(nums.begin(),nums.end(),1);
         int count=0;
         for(int i=0;i<k;i++)if(nums[i])count++;
         for(int i=k,sum=count;i<nums.size()+k;i++){
