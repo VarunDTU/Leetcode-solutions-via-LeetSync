@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> dp;
-    bool helper(vector<int>& nums, int sum, int curr_sum, int i) {
+    bool helper(vector<int>& nums, int &sum, int curr_sum, int i) {
         if (curr_sum == sum)
             return true;
         if (i == nums.size() || curr_sum > sum)
