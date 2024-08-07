@@ -13,7 +13,7 @@ public:
     }
     bool canPartition(vector<int>& nums) {
         int sum = accumulate(nums.begin(), nums.end(), 0);
-        if (sum % 2 == 1)
+        if (sum & 1)
             return false;
         dp.resize(nums.size() + 1, vector<int>(sum + 1, -1));
         sum /= 2;
