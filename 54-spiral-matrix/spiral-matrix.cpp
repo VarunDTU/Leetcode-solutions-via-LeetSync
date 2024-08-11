@@ -5,33 +5,26 @@ public:
             bottom = matrix.size() - 1;
         vector<int> v;
         while (left <= right && top <= bottom) {
-            if (top <= bottom) {
 
-                for (int i = left; i <= right; i++) {
-                    v.push_back(matrix[top][i]);
-                }
+            for (int i = left; i <= right && top <= bottom; i++) {
+                v.push_back(matrix[top][i]);
             }
             top++;
-            if (left <= right) {
 
-                for (int i = top; i <= bottom; i++) {
-                    v.push_back(matrix[i][right]);
-                }
+            for (int i = top; i <= bottom && left <= right; i++) {
+                v.push_back(matrix[i][right]);
             }
 
             right--;
-            if (top <= bottom) {
 
-                for (int i = right; i >= left; i--) {
-                    v.push_back(matrix[bottom][i]);
-                }
+            for (int i = right; i >= left && top <= bottom; i--) {
+                v.push_back(matrix[bottom][i]);
             }
-            bottom--;
-            if (left <= right) {
 
-                for (int i = bottom; i >= top; i--) {
-                    v.push_back(matrix[i][left]);
-                }
+            bottom--;
+
+            for (int i = bottom; i >= top && left <= right; i--) {
+                v.push_back(matrix[i][left]);
             }
             left++;
         }
