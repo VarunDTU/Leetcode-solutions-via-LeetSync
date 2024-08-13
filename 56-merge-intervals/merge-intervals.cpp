@@ -8,7 +8,7 @@ public:
         for(int i=0;i<intervals.size();i++){
             if(e>=intervals[i][0]){
                 e=max(intervals[i][1],e);
-                s=min(intervals[i][0],s);
+                
             }
             else{
                 ans.push_back({s,e});
