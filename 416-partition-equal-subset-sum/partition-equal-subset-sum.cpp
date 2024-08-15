@@ -1,22 +1,25 @@
 class Solution {
-public:
-    vector<vector<int>> dp;
-    bool helper(vector<int>& nums, int sum, int i) {
-        if (!sum)
+    bool helper(vector<int>& nums, vector<vector<int>>& dp, int &sum, int i,
+                int c) {
+        if (c == sum) {
             return true;
-        if (i == nums.size() || sum < 0)
+        }
+        if (i == nums.size() || c > sum)
             return false;
-        if (dp[i][sum] != -1)
-            return dp[i][sum];
-        return dp[i][sum] = helper(nums, sum - nums[i], i + 1) ||
-                            helper(nums, sum, i + 1);
+
+        if (dp[i][c] != -1)
+            return dp[i][c];
+        return dp[i][c] = (helper(nums, dp, sum, i + 1, c + nums[i]) ||
+                             helper(nums, dp, sum, i + 1, c));
     }
+
+public:
     bool canPartition(vector<int>& nums) {
         int sum = accumulate(nums.begin(), nums.end(), 0);
-        if (sum & 1)
+        if (sum % 2 == 1)
             return false;
-        dp.resize(nums.size() + 1, vector<int>(sum + 1, -1));
         sum /= 2;
-        return helper(nums, sum, 0);
+        vector<vector<int>> dp(nums.size() + 1, vector<int>(sum + 1, -1));
+        return helper(nums, dp, sum, 0, 0);
     }
 };
