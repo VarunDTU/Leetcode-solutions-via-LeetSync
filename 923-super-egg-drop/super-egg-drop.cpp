@@ -10,9 +10,9 @@ class Solution {
             int b=helper(k,n-mid,dp);
             if(a>=b)e=mid-1;
             else s=mid+1;
-             ans=min(ans,max(a,b));
+             ans=min(ans,1+max(a,b));
         }
-        return dp[k][n]=ans+1;
+        return dp[k][n]=ans;
     }
 public:
     int superEggDrop(int k, int n) {
