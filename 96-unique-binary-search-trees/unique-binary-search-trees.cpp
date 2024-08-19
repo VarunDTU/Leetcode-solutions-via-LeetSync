@@ -8,7 +8,7 @@ class Solution {
         for (int i = 0; i < n; i++) {
             ans += helper(n - i - 1, dp) * helper(i, dp);
         }
-        return ans;
+        return dp[n]=ans;
     }
 
 public:
