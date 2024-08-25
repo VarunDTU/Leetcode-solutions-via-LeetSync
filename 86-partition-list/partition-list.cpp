@@ -10,9 +10,9 @@
  */
 class Solution {
 public:
-    ListNode* partition(ListNode* head, int x) {
+    ListNode* partition(ListNode* temp, int x) {
         queue<ListNode*>q; 
-        ListNode* temp=head;
+  
         ListNode* ans=new ListNode(0);
         ListNode* res=ans;
 
