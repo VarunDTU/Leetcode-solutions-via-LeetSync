@@ -1,5 +1,5 @@
 class Solution {
-    void helper(vector<vector<int>>&ans,int n,int i,int k,vector<int>temp){
+    void helper(vector<vector<int>>&ans,int &n,int i,int k,vector<int>temp){
             if(n-k<0)return ;
             if(k==0){
                 ans.push_back(temp);
