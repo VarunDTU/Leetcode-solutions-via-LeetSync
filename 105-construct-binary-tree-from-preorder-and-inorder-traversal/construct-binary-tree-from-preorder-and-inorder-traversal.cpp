@@ -11,7 +11,7 @@
  */
 class Solution {
       TreeNode* helper(vector<int>&inorder,vector<int>&preorder,int x,int y,int a,int b){
-        cout<<x<<y<<a<<b<<endl;
+  
         if(x>y||a>b)return NULL;
 
         TreeNode* node=new TreeNode(preorder[a]);
