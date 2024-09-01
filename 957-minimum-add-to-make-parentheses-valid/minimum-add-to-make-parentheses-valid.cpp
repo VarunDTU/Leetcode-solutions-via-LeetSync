@@ -3,8 +3,8 @@ public:
     int minAddToMakeValid(string s) {
         int st=0;
         int count=0;
-        for(int i=0;i<s.size();i++){
-            if(s[i]=='(')st++;
+        for(auto &itr:s){
+            if(itr=='(')st++;
             else if(st>0)st--;
             else count++;
         }
