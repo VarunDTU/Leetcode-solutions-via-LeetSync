@@ -10,9 +10,10 @@ public:
         if(nums.size()==1)return nums.back();
         if(nums.size()==2)return max(nums[0],nums[1]);
         vector<int>dp(nums.size()+1,-1);
+        vector<int>dp2(nums.size()+1,-1);
 
         int x=helper(nums,1,nums.size()-1,dp);
-        fill(dp.begin(),dp.end(),-1);
-        return max(helper(nums,0,nums.size()-2,dp),x);
+      
+        return max(helper(nums,0,nums.size()-2,dp2),x);
     }
 };
