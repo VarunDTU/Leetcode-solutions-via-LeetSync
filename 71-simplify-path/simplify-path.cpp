@@ -5,7 +5,6 @@ public:
         string temp = "";
         for (int i = 0; i < path.size(); i++) {
             if (path[i] != '/') {
-              
                 while (i < path.size() && path[i] != '/') {
                     temp += path[i];
                     i++;
@@ -24,6 +23,6 @@ public:
             temp += st[i];
         }
      
-        return temp.size()==0?"/":temp;
+        return temp==""?"/":temp;
     }
 };
