@@ -23,6 +23,6 @@ public:
             temp += st[i];
         }
      
-        return temp==""?"/":temp;
+        return temp.size()==0?"/":temp;
     }
 };
