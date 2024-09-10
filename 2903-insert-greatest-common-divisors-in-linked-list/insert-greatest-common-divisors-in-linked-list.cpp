@@ -25,7 +25,7 @@ public:
     ListNode* insertGreatestCommonDivisors(ListNode* head) {
         if (!head->next)
             return head;
-        ListNode* ans = head;
+        ListNode* ans = head,*next;
         while (head && head->next) {
             ListNode* next = head->next;
             ListNode* gcdNode = new ListNode(gcd(head->val, next->val));
