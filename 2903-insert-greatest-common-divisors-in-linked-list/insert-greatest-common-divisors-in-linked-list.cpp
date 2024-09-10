@@ -28,8 +28,7 @@ public:
         ListNode* ans = head;
         while (head && head->next) {
             ListNode* next = head->next;
-            int gcdVal = gcd(head->val, next->val);
-            ListNode* gcdNode = new ListNode(gcdVal);
+            ListNode* gcdNode = new ListNode(gcd(head->val, next->val));
             head->next = gcdNode;
             gcdNode->next = next;
             head = next;
