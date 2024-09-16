@@ -9,7 +9,7 @@ public:
         sort(times.begin(), times.end());
         int ans = INT_MAX;
         for (int i = 1; i < times.size(); i++) {
-            cout<<times[i]<<endl;
+          
             ans = min(ans, times[i] - times[i - 1]);
         }
         return min(ans, (60 * 24 + times[0]) - times.back());
