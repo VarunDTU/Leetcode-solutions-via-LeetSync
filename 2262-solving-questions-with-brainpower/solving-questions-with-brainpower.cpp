@@ -4,9 +4,8 @@ class Solution {
         if(dp[index]!=-1)return dp[index];
         vector<int> cost= q[index];
         int i=index;
-        long long notPick=helper(q,dp,index+1);
         index+=cost[1]+1;
-        return dp[i]= (long long)max(helper(q,dp,index)+cost[0],notPick);
+        return dp[i]= (long long)max(helper(q,dp,index)+cost[0],helper(q,dp,i+1));
     }
 public:
     long long mostPoints(vector<vector<int>>& q) {
