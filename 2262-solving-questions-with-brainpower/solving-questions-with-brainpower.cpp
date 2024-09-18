@@ -9,7 +9,7 @@ class Solution {
     }
 public:
     long long mostPoints(vector<vector<int>>& q) {
-        vector<long long>dp(q.size()+1,-1);
+        vector<long long>dp((1e5)+1,-1);
         return helper(q,dp,0);
     }
 };
