@@ -1,6 +1,6 @@
 class Solution {
     int helper(string s, int index, vector<int>& dp) {
-        if (index >= s.size())
+        if (index == s.size())
             return 1;
         if (s[index] == '0')
             return 0;
