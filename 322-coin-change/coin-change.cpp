@@ -4,7 +4,7 @@ public:
          vector<int> dp(amount + 1, amount + 1);
         dp[0] = 0;
         
-        for (const auto coin : coins) {
+        for (int coin : coins) {
             for (int i = coin; i <= amount; ++i) {
                 dp[i] = min(dp[i], dp[i-coin] + 1);
             }
