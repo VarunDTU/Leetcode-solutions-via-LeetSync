@@ -10,11 +10,11 @@ public:
         vector<pair<int,int>>in;
         
         for(auto itr:mp){
-          // cout<<itr.first<<itr.second.first<<","<<itr.second.second<<endl;
+        
             in.push_back(itr.second);
         }
         
-        
+        //meeting room 
         sort(in.begin(),in.end());
         vector<int>ans;
         int st=in[0].first,e=in[0].second;
