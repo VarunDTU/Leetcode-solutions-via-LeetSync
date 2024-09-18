@@ -10,7 +10,7 @@ public:
         vector<pair<int,int>>in;
         
         for(auto itr:mp){
-           cout<<itr.first<<itr.second.first<<","<<itr.second.second<<endl;
+          // cout<<itr.first<<itr.second.first<<","<<itr.second.second<<endl;
             in.push_back(itr.second);
         }
         
