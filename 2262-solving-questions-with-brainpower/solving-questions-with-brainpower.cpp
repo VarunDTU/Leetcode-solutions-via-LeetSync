@@ -5,11 +5,11 @@ class Solution {
         vector<int> cost= q[index];
         int i=index;
         index+=cost[1]+1;
-        return dp[i]= (long long)max(helper(q,dp,index)+cost[0],helper(q,dp,i+1));
+        return dp[i]= (long long)max(helper(q,dp,index)+(long long)cost[0],helper(q,dp,i+1));
     }
 public:
     long long mostPoints(vector<vector<int>>& q) {
-        vector<long long>dp((1e5)+1,-1);
+        vector<long long>dp(q.size()+1,-1);
         return helper(q,dp,0);
     }
 };
