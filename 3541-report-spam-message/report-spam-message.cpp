@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool reportSpam(vector<string>& message, vector<string>& ban) {
-        set<string>s(ban.begin(),ban.end());
+        unordered_set<string>s(ban.begin(),ban.end());
         int count=0;
         for(auto itr:message){
             if(s.find(itr)!=s.end())count++;
