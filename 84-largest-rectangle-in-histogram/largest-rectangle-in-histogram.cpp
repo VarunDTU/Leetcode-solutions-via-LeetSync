@@ -13,18 +13,18 @@ public:
             s.push(i);
         }
         while(!s.empty())s.pop();
+         int ans=0;
         for(int i=0;i<n;i++){
             while(!s.empty() && heights[i]<=heights[s.top()]){
                 s.pop();
             }
             if(s.empty()) nsr[i]-=-1;
             else nsr[i]-=s.top();
+            ans=max(ans,(nsr[i]-1)*heights[i]);
             s.push(i);
         }
-        int ans=0;
-        for(int i=0;i<n;i++){
-            ans=max(ans,(nsr[i]-1)*heights[i]);
-        }
+       
+        
         return ans;
     }
 };
