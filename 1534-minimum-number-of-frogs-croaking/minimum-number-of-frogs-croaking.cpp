@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minNumberOfFrogs(string croak) {
-        map<char,char>cr;
+        map<char,int>cr;
         cr['c']=0;
         cr['r']=1;
         cr['o']=2;
