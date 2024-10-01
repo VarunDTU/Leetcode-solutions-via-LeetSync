@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool canArrange(vector<int>& arr, int k) {
-        map<int,int>mp;
+        unordered_map<int,int>mp;
         for(auto itr:arr)mp[(itr%k+k)%k]++;
         for(auto itr:arr){
             int remainder=(itr%k+k)%k;
