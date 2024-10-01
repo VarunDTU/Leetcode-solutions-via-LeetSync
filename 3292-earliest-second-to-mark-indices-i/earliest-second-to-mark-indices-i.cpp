@@ -1,5 +1,5 @@
 class Solution {
-bool helper(vector<int>& nums, vector<int>& c,int end){
+bool helper(vector<int>& nums, vector<int>& c,int &end){
         unordered_map<int,int>mp;
         for(int i=0;i<end;i++){
             mp[c[i]]=i;
