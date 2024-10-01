@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<int> goodDaysToRobBank(vector<int>& s, int time) {
-        // 2- >size-2-1;
+   
         vector<int>start(s.size(),0),end(s.size(),0);
         for(int i=1;i<s.size();i++){
             if(s[i-1]>=s[i])start[i]=start[i-1]+1;
@@ -14,8 +14,9 @@ public:
         }
 
         vector<int>ans;
-
-        for(int i=0;i<start.size();i++){
+        int size=start.size();
+        for(int i=time;i<size-time;i++){
+         
             if(start[i]>=time&&end[i]>=time)ans.push_back(i);
         }
         return  ans;
