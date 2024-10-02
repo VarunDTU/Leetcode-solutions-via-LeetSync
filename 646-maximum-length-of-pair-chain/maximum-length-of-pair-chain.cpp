@@ -6,7 +6,7 @@ public:
                  return a[1] < b[1];
              });
         int ans = 0, curr = INT_MIN;
-        for (auto itr : pairs) {
+        for (auto& itr : pairs) {
             if (itr[0] > curr) {
                 curr = itr[1];
                 ans++;
