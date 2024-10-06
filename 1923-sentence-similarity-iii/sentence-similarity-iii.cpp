@@ -8,20 +8,15 @@ public:
 
         while (getline(ss, token, ' ')) {
 
-            if (token.size() != 0) {
-                sen1.push_back(token);
-            }
+            sen1.push_back(token);
         }
         while (getline(ss2, token, ' ')) {
 
-            if (token.size() != 0) {
-                sen2.push_back(token);
-            }
+            sen2.push_back(token);
         }
 
         int st1 = 0, st2 = 0;
 
-    
         while (sen1.size() > 0 && sen2.size() > 0 &&
                sen1.front() == sen2.front()) {
             sen1.pop_front();
@@ -32,6 +27,6 @@ public:
             sen1.pop_back();
             sen2.pop_back();
         }
-        return sen1.size()==0||sen2.size() == 0 ? true : false;
+        return sen1.size() == 0 || sen2.size() == 0 ? true : false;
     }
 };
