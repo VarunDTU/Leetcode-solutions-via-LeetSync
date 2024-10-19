@@ -1,36 +1,25 @@
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
-        vector<int> el1 = {0, -1}, el2 = {0, -1};
-        for (int itr : nums) {
-            if (el2[1] == itr)
-                el2[0]++;
-            else if (el1[1] == itr)
-                el1[0]++;
-            else if (el1[0] <= 0)
-                el1 = {1, itr};
-            else if (el2[0] <= 0)
-                el2 = {1, itr};
-            
-            else {
-                el1[0]--;
-                el2[0]--;
-            }
+        pair<int,int>count1={-1,0},count2={-1,0};
+        for(auto itr:nums){
+            if(itr==count1.first)count1.second++;
+            else if(itr==count2.first)count2.second++;
+            else if(count1.second<=0)count1={itr,1};
+            else if(count2.second<=0)count2={itr,1};
+            else count1.second--,count2.second--;
         }
-        int c1 = 0, c2 = 0;
-        for (auto itr : nums) {
-            if (itr == el1[1])
-                c1++;
-            else if (itr == el2[1])
-                c2++;
+        cout<<count1.first<<count1.second;
+        cout<<count2.first<<count2.second;
+        count1.second=0;
+        count2.second=0;
+        for(auto itr:nums){
+            if(itr==count1.first)count1.second++;
+            else if(itr==count2.first)count2.second++;
         }
-        cout<<el1[1]<<c1;
-        cout<<el2[1]<<c2;
-        vector<int> ans;
-        if (3*c1 > nums.size())
-            ans.push_back(el1[1]);
-        if (3*c2 > nums.size() )
-            ans.push_back(el2[1]);
+        vector<int>ans;
+        if(3*count1.second>nums.size())ans.push_back(count1.first);
+        if(3*count2.second>nums.size())ans.push_back(count2.first);
         return ans;
     }
 };
