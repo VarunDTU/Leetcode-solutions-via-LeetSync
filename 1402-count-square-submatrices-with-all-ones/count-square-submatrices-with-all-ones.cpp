@@ -5,9 +5,9 @@ class Solution {
             return 0;
             if(t[i][j]!=-1)return t[i][j];
     
-            return t[i][j]= 1 + min(min(helper(matrix, i + 1, j + 1,t),
-                                   helper(matrix, i + 1, j,t)),
-                                   helper(matrix, i, j + 1,t));
+            return t[i][j]= 1 + min({helper(matrix, i + 1, j + 1,t),
+                                   helper(matrix, i + 1, j,t),
+                                   helper(matrix, i, j + 1,t)});
     
     }
 
