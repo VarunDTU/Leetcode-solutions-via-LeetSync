@@ -23,12 +23,9 @@ public:
         return sum;
     }
     vector<int> findFrequentTreeSum(TreeNode* root) {
-
         dfs(root);
-
         vector<int> ans;
         for (auto itr : s) {
-
             if (maxi == itr.second)
                 ans.push_back({itr.first});
         }
