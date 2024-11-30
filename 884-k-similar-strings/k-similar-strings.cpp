@@ -1,6 +1,6 @@
 class Solution {
     unordered_map<string,int>t;
-    int dp(string s1, string s2, int i) {
+    int dp(string &s1, string &s2, int i) {
         if (i == s1.size())
             return 0;
        if(t.find(s2)!=t.end())return t[s2];
