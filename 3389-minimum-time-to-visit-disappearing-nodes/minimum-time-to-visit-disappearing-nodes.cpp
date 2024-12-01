@@ -17,7 +17,7 @@ public:
 
             int curr = q.top().second;
             int currCost = q.top().first;
-            cout << curr << currCost << endl;
+           
             q.pop();
             if (ans[curr] != -1)
                 continue;
