@@ -25,7 +25,7 @@ public:
             setParent(itr[0], itr[1]);
         int ans = 0;
         for (int i = 0; i < n; i++)
-            if (nodeCount[i]&&parent[i] == -1 &&
+            if (nodeCount[i]!=0&&parent[i] == -1 &&
                 edgeCount[i] == ((nodeCount[i] * (nodeCount[i] - 1)) / 2))
                 ans++;
         return ans;
