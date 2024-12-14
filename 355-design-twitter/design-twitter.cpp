@@ -32,8 +32,7 @@ public:
     }
     
     void unfollow(int followerId, int followeeId) {
-        if(followerId!=followeeId)
-        followerList[followerId].erase(followeeId);
+        if(followerId!=followeeId)followerList[followerId].erase(followeeId);
     }
 };
 
