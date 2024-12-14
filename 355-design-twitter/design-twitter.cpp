@@ -9,8 +9,8 @@ public:
     }
     
     void postTweet(int userId, int tweetId) {
-        tweets[userId].push_back({count,tweetId});
-        count++;
+        tweets[userId].push_back({++count,tweetId});
+        
     }
     
     
