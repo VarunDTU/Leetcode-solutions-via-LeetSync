@@ -23,7 +23,7 @@ public:
                 q.push(tweet);
             }
         }   
-        for(int i=0;i<10&&q.size()>0;i++){feed.push_back(q.top().second),q.pop();}
+        for(int i=0;i<10&&!q.empty();i++){feed.push_back(q.top().second),q.pop();}
         return feed;
     }
     
