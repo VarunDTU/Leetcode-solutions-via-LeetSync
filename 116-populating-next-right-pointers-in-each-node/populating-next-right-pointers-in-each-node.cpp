@@ -17,25 +17,20 @@ public:
 */
 
 class Solution {
-
+  
+    void helper(Node*root){
+        if(!root)return;
+      
+        if(root->left)root->left->next=root->right;
+        if(root->right&&root->next)root->right->next=root->next->left;
+        helper(root->left);
+        helper(root->right);
+        
+    }
 public:
     Node* connect(Node* root) {
-        if (!root)
-            return root;
-        queue<Node*> q;
-        q.push(root);
-        while(!q.empty()){
-            int size=q.size();
-            while(size--){
-                Node *temp=q.front();
-                q.pop();
-                if(size!=0)temp->next=q.front();
-                else temp->next=NULL;
-                if(temp->left)q.push(temp->left);
-                if(temp->right)q.push(temp->right);
-            }
-        }
+        helper(root);
+      
         return root;
-
     }
 };
