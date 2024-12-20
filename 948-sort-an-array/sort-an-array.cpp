@@ -1,5 +1,5 @@
 class Solution {
-    void merge(vector<int>&nums,int start,int mid,int end){
+    void merge(vector<int>&nums,int &start,int &mid,int &end){
             vector<int>finalarr(end-start+1);
             int first=start,second=mid+1;
             int ptr=0;
@@ -28,7 +28,7 @@ class Solution {
         for(int i=0;i<finalarr.size();i++){
             nums[i+start]=finalarr[i];
         }
-        
+
 
 
     }
