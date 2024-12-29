@@ -13,25 +13,23 @@ public:
     }
 
     void renew(string tokenId, int currentTime) {
-      
+
         if (tokenStore.find(tokenId) == tokenStore.end())
             return;
         int oldTime = tokenStore[tokenId];
-        if(oldTime<=currentTime)return ;
+        if (oldTime <= currentTime)
+            return;
         tokenStore[tokenId] = currentTime + lifetime;
         auto tokenTime = tokenLifetimes.find(oldTime);
         tokenLifetimes.erase(tokenTime);
-        
+
         tokenLifetimes.insert(currentTime + lifetime);
     }
 
     int countUnexpiredTokens(int currentTime) {
-        int ans=0;
-        for(auto itr: tokenLifetimes){
-            if(itr>currentTime)ans++;
-        }
-       
-        return ans;
+
+        return distance(tokenLifetimes.upper_bound(currentTime),
+                        tokenLifetimes.end());
     }
 };
 
