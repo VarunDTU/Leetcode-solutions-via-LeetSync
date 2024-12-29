@@ -1,5 +1,5 @@
 class Solution {
-    bool ans(string name,string typed,int i,int j){
+    bool ans(string &name,string &typed,int i,int j){
         if(name.size()==i&&typed.size()==j)return true;
            if(name.size()==i||typed.size()==j)return false;
         
