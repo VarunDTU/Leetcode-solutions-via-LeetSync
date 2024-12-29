@@ -30,7 +30,7 @@ public:
         for(auto itr: tokenLifetimes){
             if(itr>currentTime)ans++;
         }
-        cout<<endl;
+       
         return ans;
     }
 };
