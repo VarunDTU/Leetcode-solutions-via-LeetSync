@@ -9,24 +9,23 @@ public:
     }
 
     void visit(string url) {
-        history.erase(history.begin()+curr,history.end());
+        history.erase(history.begin() + curr, history.end());
         history.push_back(url);
         curr++;
     }
 
     string back(int steps) {
         curr -= steps;
-        cout<<curr<<" ";
+
         curr = max(curr, 1);
-        cout<<curr<<endl;
-        cout<<history[curr-1];
-        return history[curr-1];
+
+        return history[curr - 1];
     }
 
     string forward(int steps) {
 
         curr = min(curr + steps, (int)(history.size()));
-        return history[curr-1];
+        return history[curr - 1];
     }
 };
 
