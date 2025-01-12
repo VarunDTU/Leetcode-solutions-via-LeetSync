@@ -7,7 +7,6 @@ public:
 
         while(e<n){
             dic[s[e]]++;
-            cout<<dic[s[e]];
             while(dic[s[e]]!=1){
                
                 dic[s[st]]--;
